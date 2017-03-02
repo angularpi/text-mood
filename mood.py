@@ -2,18 +2,15 @@
 import csv
 import numpy as np
 
+#load words and score from dictionary.csv to arrays
 words = []
 score = []
-
-"prepare score"
-
 with open ("dictionary.csv","rb") as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in spamreader:
         words.append(row[0])
         score.append(row[1])
-
-"prepare input"
+#load input text from input.txt and clean it before procesing
 f = open("input.txt", "r").read()
 f = f.lower()
 f = f.replace("'"," ")
@@ -31,6 +28,7 @@ f = f.split()
 f = sorted(f)
 print("length input: " + str(len(f)))
 
+#main
 output = []
 frequency = []
 rating = []
@@ -46,6 +44,6 @@ for w in f:
         k += 1  
     else:
         pass
-    
+#print results    
 print("length unique: " + str(len(output)))
 print("Total: " + str(np.sum(rating)/np.sum(frequency)))

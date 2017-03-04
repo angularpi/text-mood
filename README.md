@@ -1,3 +1,4 @@
+#text-mood
 <strong>Objective:</strong> find a way to measure the "mood" of a text input, such as Facebook feed, books, news.
 
 <strong>Approach:</strong> by calculating the ratio between positive and negative words, this script gives a numeric value that allows to compare the "mood" of different texts.
